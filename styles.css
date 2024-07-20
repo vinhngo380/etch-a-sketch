@@ -2,13 +2,23 @@ body {
 	background: #1B1F3B;
 	height: 100vh;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }	
 
+.new-grid {
+	height: 75px;
+	width: 250px;
+	color: black;
+	background-color: #E1E5F2;
+	border-style: none;
+}
+
 .main-container {
 	display: flex;
 	flex-direction: column;
+	margin: 8px;
 }
 
 .row-container {
@@ -16,7 +26,6 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-grow: 1;
-	margin: 0;
 }
 
 .square {
