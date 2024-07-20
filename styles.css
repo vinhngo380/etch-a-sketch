@@ -1,0 +1,25 @@
+.body {
+	background: #36453B;
+	height: 100vh;
+}
+
+.main-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.row-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-grow: 1;
+	margin: 0;
+}
+
+.square {
+	display: flex;
+	height: 150px;
+	width: 150px;
+}
