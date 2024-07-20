@@ -10,6 +10,9 @@ function createGrid() {
 			let squareIDNumber = (i + 1) * (j + 1);
 			squareDiv.id = "square" + squareIDNumber;
 			squareDiv.classList.add("square");
+			squareDiv.addEventListener("mouseover", (event) => {
+				squareDiv.style.backgroundColor = "white";
+			});
 			rowDiv.appendChild(squareDiv);
 		}
 	}
