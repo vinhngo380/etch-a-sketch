@@ -1,12 +1,12 @@
-let globalVals = {
-	size: 800 
+const globalVals = {
+	size: 800,
+	colors: ["#028090", "#BFDBF7", "#E1E5F2"]
 };
 
 function createGrid(gridSize = 4) {
 	const mainDiv = document.getElementById("main");
 	let numberOfSquares = gridSize;
 	let squareSize = globalVals.size / numberOfSquares;
-	console.log(`number of squares: ${numberOfSquares}`);
 	for (let i = 0; i < gridSize; i++) {
 		let rowDiv = document.createElement("div");
 		rowDiv.id = "row" + i;
@@ -18,16 +18,24 @@ function createGrid(gridSize = 4) {
 			squareDiv.id = "square" + squareIDNumber;
 			squareDiv.classList.add("square");
 			squareDiv.setAttribute("style", `height:${squareSize}px; width:${squareSize}px;`);
+			squareDiv.style.opacity = 0;
 			squareDiv.addEventListener("mouseover", (event) => {
 				squareDiv.style.backgroundColor = "white";
+				colorMyPencils(squareDiv);
 			});
 			rowDiv.appendChild(squareDiv);
 		}
 	}
-	const testingSquare = document.getElementById("square1");
-	console.log(`height: ${testingSquare.style.height}`);
-	console.log(`width: ${testingSquare.style.width}`);
-	console.log(`global size: ${globalVals.size}`);
+}
+
+function colorMyPencils(squareDiv) {
+	let currentOpa = parseFloat(squareDiv.style.opacity);
+	if (currentOpa < 1) {
+		currentOpa += 0.1;
+		squareDiv.style.opacity = currentOpa;
+		let index = Math.floor(Math.random() * (globalVals.colors.length + 1));
+		squareDiv.style.background = globalVals.colors[index];
+	}
 }
 
 function clearMainDiv() {
