@@ -9,7 +9,7 @@ function createGrid() {
 			let squareDiv = document.createElement("div");
 			let squareIDNumber = (i + 1) * (j + 1);
 			squareDiv.id = "square" + squareIDNumber;
-			squareDiv.classList.add("row-container");
+			squareDiv.classList.add("square");
 			rowDiv.appendChild(squareDiv);
 		}
 	}
