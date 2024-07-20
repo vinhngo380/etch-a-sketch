@@ -4,7 +4,7 @@ let globalVals = {
 
 function createGrid(gridSize = 4) {
 	const mainDiv = document.getElementById("main");
-	let numberOfSquares = gridSize + 1;
+	let numberOfSquares = gridSize;
 	let squareSize = globalVals.size / numberOfSquares;
 	console.log(`number of squares: ${numberOfSquares}`);
 	for (let i = 0; i < gridSize; i++) {
